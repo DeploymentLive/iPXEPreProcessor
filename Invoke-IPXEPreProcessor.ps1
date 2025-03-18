@@ -91,9 +91,6 @@ foreach ( $line in Get-Content -Path $path ) {
             throw "nested script not found: $Line"
         }
 
-        Invoke-iPXEPreCompiler -Path  $Found -StartingLabel ( $StartingLabel + 1 )
-
-        <#
         if ( $MyInvocation.MyCommand.path ) {
             & $MyInvocation.MyCommand.path -startinglabel $StartingLabel -path $Found
 
@@ -105,7 +102,7 @@ foreach ( $line in Get-Content -Path $path ) {
             $MyInvocation.MyCommand | Fl * | out-string | write-verbose
             throw "this Pre-Parsing script not found"
         }
-        #>
+
     }
 
     #endregion
